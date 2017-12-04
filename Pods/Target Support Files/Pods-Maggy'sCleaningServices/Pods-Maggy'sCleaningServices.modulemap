@@ -1,0 +1,6 @@
+framework module Pods_Maggy_sCleaningServices {
+  umbrella header "Pods-Maggy'sCleaningServices-umbrella.h"
+
+  export *
+  module * { export * }
+}
