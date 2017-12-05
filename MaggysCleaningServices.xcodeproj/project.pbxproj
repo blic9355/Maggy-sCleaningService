@@ -14,9 +14,13 @@
 		D3C19CF41FD5F35D00AF63E0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3C19CF31FD5F35D00AF63E0 /* GoogleService-Info.plist */; };
 		D3C19CF71FD5F47000AF63E0 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C19CF61FD5F47000AF63E0 /* DataService.swift */; };
 		D3C19CFA1FD5F50600AF63E0 /* SignUpVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3C19CF91FD5F50600AF63E0 /* SignUpVC.storyboard */; };
-		D3C19CFC1FD5F50D00AF63E0 /* SignUpStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3C19CFB1FD5F50D00AF63E0 /* SignUpStoryboard.storyboard */; };
+		D3C19CFC1FD5F50D00AF63E0 /* SignInVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3C19CFB1FD5F50D00AF63E0 /* SignInVC.storyboard */; };
 		D3C19D011FD5F80E00AF63E0 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C19D001FD5F80E00AF63E0 /* AuthService.swift */; };
-		D3C19D031FD6FBAE00AF63E0 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3C19D021FD6FBAE00AF63E0 /* Login.storyboard */; };
+		D3DE98AE1FD6FFDF00C6BE86 /* LoginVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3DE98AD1FD6FFDF00C6BE86 /* LoginVC.storyboard */; };
+		D3DE98B01FD7031100C6BE86 /* AdminAuthSevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DE98AF1FD7031100C6BE86 /* AdminAuthSevice.swift */; };
+		D3DE98B51FD7057F00C6BE86 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DE98B41FD7057F00C6BE86 /* SignInViewController.swift */; };
+		D3DE98B71FD7069F00C6BE86 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DE98B61FD7069F00C6BE86 /* LoginViewController.swift */; };
+		D3DE98B91FD70B9000C6BE86 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DE98B81FD70B9000C6BE86 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,9 +35,13 @@
 		D3C19CF31FD5F35D00AF63E0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D3C19CF61FD5F47000AF63E0 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		D3C19CF91FD5F50600AF63E0 /* SignUpVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignUpVC.storyboard; sourceTree = "<group>"; };
-		D3C19CFB1FD5F50D00AF63E0 /* SignUpStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignUpStoryboard.storyboard; sourceTree = "<group>"; };
+		D3C19CFB1FD5F50D00AF63E0 /* SignInVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignInVC.storyboard; sourceTree = "<group>"; };
 		D3C19D001FD5F80E00AF63E0 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
-		D3C19D021FD6FBAE00AF63E0 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		D3DE98AD1FD6FFDF00C6BE86 /* LoginVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginVC.storyboard; sourceTree = "<group>"; };
+		D3DE98AF1FD7031100C6BE86 /* AdminAuthSevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminAuthSevice.swift; sourceTree = "<group>"; };
+		D3DE98B41FD7057F00C6BE86 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		D3DE98B61FD7069F00C6BE86 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D3DE98B81FD70B9000C6BE86 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +89,7 @@
 				D3C19CF51FD5F45200AF63E0 /* Services */,
 				D3C19CF81FD5F4E800AF63E0 /* Storyboards */,
 				D3C19CFE1FD5F65F00AF63E0 /* Model */,
+				D3DE98B11FD7051400C6BE86 /* ViewControllers */,
 				D3C19CE11FD5F04600AF63E0 /* AppDelegate.swift */,
 				D3C19CE81FD5F04600AF63E0 /* Assets.xcassets */,
 				D3C19CED1FD5F04600AF63E0 /* Info.plist */,
@@ -94,6 +103,7 @@
 			children = (
 				D3C19CF61FD5F47000AF63E0 /* DataService.swift */,
 				D3C19D001FD5F80E00AF63E0 /* AuthService.swift */,
+				D3DE98AF1FD7031100C6BE86 /* AdminAuthSevice.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -101,9 +111,9 @@
 		D3C19CF81FD5F4E800AF63E0 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				D3C19CFB1FD5F50D00AF63E0 /* SignInVC.storyboard */,
 				D3C19CF91FD5F50600AF63E0 /* SignUpVC.storyboard */,
-				D3C19CFB1FD5F50D00AF63E0 /* SignUpStoryboard.storyboard */,
-				D3C19D021FD6FBAE00AF63E0 /* Login.storyboard */,
+				D3DE98AD1FD6FFDF00C6BE86 /* LoginVC.storyboard */,
 				D3C19CEA1FD5F04600AF63E0 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
@@ -114,6 +124,16 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D3DE98B11FD7051400C6BE86 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D3DE98B41FD7057F00C6BE86 /* SignInViewController.swift */,
+				D3DE98B61FD7069F00C6BE86 /* LoginViewController.swift */,
+				D3DE98B81FD70B9000C6BE86 /* SignUpViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		FAE4A4783EB3D040431A27FB /* Frameworks */ = {
@@ -186,9 +206,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3C19CFC1FD5F50D00AF63E0 /* SignUpStoryboard.storyboard in Resources */,
+				D3C19CFC1FD5F50D00AF63E0 /* SignInVC.storyboard in Resources */,
 				D3C19CEC1FD5F04600AF63E0 /* LaunchScreen.storyboard in Resources */,
-				D3C19D031FD6FBAE00AF63E0 /* Login.storyboard in Resources */,
+				D3DE98AE1FD6FFDF00C6BE86 /* LoginVC.storyboard in Resources */,
 				D3C19CF41FD5F35D00AF63E0 /* GoogleService-Info.plist in Resources */,
 				D3C19CE91FD5F04600AF63E0 /* Assets.xcassets in Resources */,
 				D3C19CFA1FD5F50600AF63E0 /* SignUpVC.storyboard in Resources */,
@@ -264,8 +284,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3DE98B71FD7069F00C6BE86 /* LoginViewController.swift in Sources */,
+				D3DE98B91FD70B9000C6BE86 /* SignUpViewController.swift in Sources */,
 				D3C19CF71FD5F47000AF63E0 /* DataService.swift in Sources */,
 				D3C19CE21FD5F04600AF63E0 /* AppDelegate.swift in Sources */,
+				D3DE98B01FD7031100C6BE86 /* AdminAuthSevice.swift in Sources */,
+				D3DE98B51FD7057F00C6BE86 /* SignInViewController.swift in Sources */,
 				D3C19D011FD5F80E00AF63E0 /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

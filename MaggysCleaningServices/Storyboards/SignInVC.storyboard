@@ -12,10 +12,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Sign In View Controller-->
         <scene sceneID="ERq-ZJ-maz">
             <objects>
-                <viewController storyboardIdentifier="signUpVC" id="3iO-a7-rcY" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FirstVC" id="3iO-a7-rcY" customClass="SignInViewController" customModule="MaggysCleaningServices" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QJQ-Xd-dxH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -50,6 +50,9 @@
                                         <state key="normal" title="Log in">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="64m-XA-t4e" kind="show" id="3iS-JQ-mdZ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -62,17 +65,23 @@
                                             <constraint firstAttribute="width" secondItem="R6X-Ii-c4A" secondAttribute="height" multiplier="1:1" id="LEz-nZ-L0A"/>
                                         </constraints>
                                         <state key="normal" image="Icon-Small-50"/>
+                                        <connections>
+                                            <action selector="emailSignUpButtonTapped:" destination="3iO-a7-rcY" eventType="touchUpInside" id="xFa-lH-F1z"/>
+                                            <segue destination="75k-KC-SlH" kind="show" identifier="toSignUpVC" id="AtL-LL-taN"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1g1-fD-8fE" userLabel="Button">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1g1-fD-8fE" userLabel="Button">
                                         <rect key="frame" x="45" y="0.0" width="255" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="gKe-Rw-bhd"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <state key="normal" title="Sign up using email">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="5Fj-F7-vK5" kind="show" id="7P5-oV-lnB"/>
+                                            <action selector="emailSignUpButtonTapped:" destination="3iO-a7-rcY" eventType="touchUpInside" id="5sZ-ri-MX6"/>
+                                            <segue destination="75k-KC-SlH" kind="show" identifier="toSignUpVC" id="UpW-Bj-OzD"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -98,13 +107,21 @@
             </objects>
             <point key="canvasLocation" x="426.39999999999998" y="140.77961019490255"/>
         </scene>
-        <!--Storyboard Reference-->
-        <scene sceneID="j4b-MR-fda">
+        <!--SignUpVC-->
+        <scene sceneID="q7J-UW-DIe">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="LoginVC" id="5Fj-F7-vK5" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2Xk-Ki-V8W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardIdentifier="SignUpVC" storyboardName="SignUpVC" id="75k-KC-SlH" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KOH-zy-Cl6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1066" y="139"/>
+            <point key="canvasLocation" x="1090" y="119"/>
+        </scene>
+        <!--LoginVC-->
+        <scene sceneID="50H-k3-7td">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="LoginViewController" storyboardName="LoginVC" id="64m-XA-t4e" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yc0-Gc-uX6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1049" y="269"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="39Z-4b-pfI">
@@ -128,4 +145,7 @@
     <resources>
         <image name="Icon-Small-50" width="25" height="25"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="UpW-Bj-OzD"/>
+    </inferredMetricsTieBreakers>
 </document>
