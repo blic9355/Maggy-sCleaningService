@@ -179,6 +179,9 @@
                                     <constraint firstAttribute="width" constant="60" id="taA-1U-nWu"/>
                                 </constraints>
                                 <state key="normal" title="SIGN UP"/>
+                                <connections>
+                                    <action selector="signUpButtonTapped:" destination="yUk-qm-RB9" eventType="touchUpInside" id="O3B-Y8-VHb"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -206,6 +209,11 @@
                         <viewLayoutGuide key="safeArea" id="syx-Ma-9Om"/>
                     </view>
                     <navigationItem key="navigationItem" id="PM6-h1-baP"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="8Se-Cg-hil" id="DDz-xO-m5Y"/>
+                        <outlet property="passwordTextField" destination="VP8-JG-ayb" id="lLh-RY-YKa"/>
+                        <outlet property="phoneTextField" destination="adh-li-gkq" id="W4d-qx-JPS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z50-CN-3GM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -12,7 +12,7 @@ import Firebase
 class AuthSevice {
     static let shared = AuthSevice()
     
-    func registerUser(withEmail email: String, andPassword password: String, userCreationComplete: @escaping (_ status: Bool, _ error: Error?) -> ()) {
+    func registerUser(withEmail email: String, andPassword password: String, andPhone phone: String, userCreationComplete: @escaping (_ status: Bool, _ error: Error?) -> ()) {
         Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
             guard let user = user else { userCreationComplete(false, error); return }
             
