@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0106AE15ED7770C146C17133 /* Pods_MaggysCleaningServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5116D1CA9BD2DCEFB9EC118C /* Pods_MaggysCleaningServices.framework */; };
+		D3A3C3CA1FD9AD5A00CF20AE /* Appointments.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A3C3C91FD9AD5A00CF20AE /* Appointments.swift */; };
+		D3A3C3CD1FDB030700CF20AE /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A3C3CC1FDB030700CF20AE /* Extentions.swift */; };
 		D3C19CE21FD5F04600AF63E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C19CE11FD5F04600AF63E0 /* AppDelegate.swift */; };
 		D3C19CE91FD5F04600AF63E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3C19CE81FD5F04600AF63E0 /* Assets.xcassets */; };
 		D3C19CEC1FD5F04600AF63E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3C19CEA1FD5F04600AF63E0 /* LaunchScreen.storyboard */; };
@@ -29,6 +31,8 @@
 		3A3C4228FB011DD55757C0BA /* Pods-MaggysCleaningServices.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaggysCleaningServices.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MaggysCleaningServices/Pods-MaggysCleaningServices.debug.xcconfig"; sourceTree = "<group>"; };
 		5116D1CA9BD2DCEFB9EC118C /* Pods_MaggysCleaningServices.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MaggysCleaningServices.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		742F76347EFF4C16A2565A9B /* Pods-MaggysCleaningServices.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaggysCleaningServices.release.xcconfig"; path = "Pods/Target Support Files/Pods-MaggysCleaningServices/Pods-MaggysCleaningServices.release.xcconfig"; sourceTree = "<group>"; };
+		D3A3C3C91FD9AD5A00CF20AE /* Appointments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appointments.swift; sourceTree = "<group>"; };
+		D3A3C3CC1FDB030700CF20AE /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
 		D3C19CDE1FD5F04600AF63E0 /* MaggysCleaningServices.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MaggysCleaningServices.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3C19CE11FD5F04600AF63E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3C19CE81FD5F04600AF63E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -69,6 +73,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D3A3C3CB1FDB02F500CF20AE /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D3A3C3CC1FDB030700CF20AE /* Extentions.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		D3C19CD51FD5F04600AF63E0 = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +102,7 @@
 		D3C19CE01FD5F04600AF63E0 /* MaggysCleaningServices */ = {
 			isa = PBXGroup;
 			children = (
+				D3A3C3CB1FDB02F500CF20AE /* Helpers */,
 				D3DE98BC1FD7436800C6BE86 /* Views */,
 				D3C19CF51FD5F45200AF63E0 /* Services */,
 				D3C19CF81FD5F4E800AF63E0 /* Storyboards */,
@@ -127,6 +140,7 @@
 		D3C19CFE1FD5F65F00AF63E0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D3A3C3C91FD9AD5A00CF20AE /* Appointments.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -301,10 +315,12 @@
 				D3DE98B71FD7069F00C6BE86 /* LoginViewController.swift in Sources */,
 				D3DE98B91FD70B9000C6BE86 /* SignUpViewController.swift in Sources */,
 				D3C19CF71FD5F47000AF63E0 /* DataService.swift in Sources */,
+				D3A3C3CD1FDB030700CF20AE /* Extentions.swift in Sources */,
 				D3C19CE21FD5F04600AF63E0 /* AppDelegate.swift in Sources */,
 				D3DE98B01FD7031100C6BE86 /* AdminAuthSevice.swift in Sources */,
 				D3DE98B51FD7057F00C6BE86 /* FirstViewController.swift in Sources */,
 				D3DE98C21FD7454D00C6BE86 /* CalendarViewController.swift in Sources */,
+				D3A3C3CA1FD9AD5A00CF20AE /* Appointments.swift in Sources */,
 				D3C19D011FD5F80E00AF63E0 /* AuthService.swift in Sources */,
 				D3DE98C01FD7440F00C6BE86 /* CustomCell.swift in Sources */,
 			);

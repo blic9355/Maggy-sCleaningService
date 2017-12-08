@@ -19,13 +19,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FirebaseApp.configure()
 
-//        if Auth.auth().currentUser == nil {
-//            // Mark: - you did this wrong fix it
-//            let storyboard = UIStoryboard(name:"CalendarVC", bundle: Bundle.main)
-//            let authVC = storyboard.instantiateViewController(withIdentifier: "signUpVC")
-//            window?.makeKeyAndVisible()
-//            window?.rootViewController?.present("signUpVC", animated: true, completion: nil)
-//        }
+        if Auth.auth().currentUser == nil {
+            // Mark: - you did this wrong fix it
+            let storyboard = UIStoryboard(name:"CalendarVC", bundle: Bundle.main)
+            let authVC = storyboard.instantiateViewController(withIdentifier: "FirstVC")
+            window?.makeKeyAndVisible()
+            window?.rootViewController?.present(FirstViewController(), animated: true, completion: nil)
+        }
         return true
     }
 

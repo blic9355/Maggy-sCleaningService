@@ -13,7 +13,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
     
-    let alertErrorTitle = "Error Signing in"
+    let alertErrorTitle = "Couldn't Signing in"
     let alertErrorMessage = "We couldn't sign you in. Check that all your login info is correct or sign up"
     
     func presentErrorAlertWith(title: String, message: String) {
