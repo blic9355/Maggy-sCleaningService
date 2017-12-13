@@ -22,13 +22,12 @@ extension String {
 
 // Mark: - CalendarVC Extention
 
-extension CalendarViewController: JTAppleCalendarViewDataSource {
+extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendarViewDelegate {
     
     func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters {
         calendarFormatter.dateFormat = "YYY MM DD"
         calendarFormatter.timeZone = Calendar.current.timeZone
         calendarFormatter.locale = Calendar.current.locale
-        
         
         let startDate = calendarFormatter.date(from: "2017 01 01")!
         let endDate = calendarFormatter.date(from: "3000 12 31")!
@@ -39,6 +38,7 @@ extension CalendarViewController: JTAppleCalendarViewDataSource {
     
     func calendar(_ calendar: JTAppleCalendarView, willDisplay cell: JTAppleCell, forItemAt date: Date, cellState: CellState, indexPath: IndexPath) {
         configureCell(view: cell, cellState: cellState)
+
     }
     
     func setUpCalendarView() {
@@ -59,28 +59,59 @@ extension CalendarViewController: JTAppleCalendarViewDataSource {
             self.yearLabel.text = formatter.string(from: date)
             formatter.dateFormat = "MMMM"
             self.monthLabel.text = formatter.string(from: date)
+            //            public let dateSection: () -> (range: (start: Date, end: Date), month: Int, rowCount: Int)
+            
         }
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
+        
         guard let cell = cell as? CustomCell else { return }
         guard let day = cell.dateLabel.text else { return }
         guard let mounth = self.monthLabel.text else { return }
+        guard let indexPath = calendar.indexPath(for: cell) else { return }
         
-        
-        dateLabel.isHidden = false
-        if dateLabel.isHidden == false {
-            dateLabel.text = "\(String(describing: day))/\(String(describing: mounth))/17"
+        switch indexPath.item {
+            
+        case (0), (7), (14), (21), (28), (35):
+            let dayOfWeek = "Sun"
+            dateLabel.text = "\(String(describing: dayOfWeek)) \(String(describing: mounth)) \(String(describing: day))"
+            
+        case (1), (8), (15), (22), (29), (36) :
+            let dayOfWeek = "Mon"
+            dateLabel.text = "\(String(describing: dayOfWeek)) \(String(describing: mounth)) \(String(describing: day))"
+            
+        case (2), (9), (16), (23), (30), (37) :
+            let dayOfWeek = "Tue"
+            dateLabel.text = "\(String(describing: dayOfWeek)) \(String(describing: mounth)) \(String(describing: day))"
+            
+        case (3), (10), (17), (24), (31), (38) :
+            let dayOfWeek = "Wed"
+            dateLabel.text = "\(String(describing: dayOfWeek)) \(String(describing: mounth)) \(String(describing: day))"
+            
+        case (4), (11), (18), (25), (32), (39) :
+            let dayOfWeek = "Thu"
+            dateLabel.text = "\(String(describing: dayOfWeek)) \(String(describing: mounth)) \(String(describing: day))"
+            
+        case (5), (12), (19), (26), (33), (40) :
+            let dayOfWeek = "Fri"
+            dateLabel.text = "\(String(describing: dayOfWeek)) \(String(describing: mounth)) \(String(describing: day))"
+        case (6), (13), (20), (27), (34), (41) :
+            let dayOfWeek = "Sat"
+            dateLabel.text = "\(String(describing: dayOfWeek)) \(String(describing: mounth)) \(String(describing: day))"
+            
+        default:
+            break
         }
+        
         cell.selectedView.isHidden = false
         cell.selectedView.layer.cornerRadius = cell.selectedView.frame.size.width / 3
         configureCell(view: cell, cellState: cellState)
-        
     }
     
+    // Mark: - Deseleced cell
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
         guard let cell = cell as? CustomCell else { return }
-        dateLabel.isHidden = true
         cell.selectedView.isHidden = true
         configureCell(view: cell, cellState: cellState)
     }
@@ -88,7 +119,7 @@ extension CalendarViewController: JTAppleCalendarViewDataSource {
     func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
         setUpCalendarView()
     }
-
+    
     // display the cell
     func calendar(_ calendar: JTAppleCalendarView, cellForItemAt date: Date, cellState: CellState, indexPath: IndexPath) -> JTAppleCell {
         
@@ -103,6 +134,7 @@ extension CalendarViewController: JTAppleCalendarViewDataSource {
         configureCell(view: cell, cellState: cellState)
         return cell
     }
+    
 }
 
 

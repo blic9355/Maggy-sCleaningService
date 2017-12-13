@@ -11,8 +11,10 @@ import JTAppleCalendar
 import EventKit
 
 class CalendarViewController: UIViewController {
+
     var calendarFormatter = DateFormatter()
     let dateFormatter = DateFormatter()
+    
     
     
     let cell = CustomCell()
@@ -28,7 +30,7 @@ class CalendarViewController: UIViewController {
     // Mark: - Actions
     @IBAction func makeAppointmentBtnTapped(_ sender: Any) {
         let eventStore: EKEventStore = EKEventStore()
-        let appointmentDate = dateLabel.text?.toDateFormattedWith(format: "d/M/yy")
+        let appointmentDate = dateLabel.text?.toDateFormattedWith(format: "HH:mm 'on' d/M/yy")
         
         
         eventStore.requestAccess(to: .event) { (granted, error) in
@@ -63,9 +65,10 @@ class CalendarViewController: UIViewController {
         setUpCalendarView()
         
     }
-    
+
     func configureCell(view: JTAppleCell?, cellState: CellState) {
         guard let myCustomCell = view as? CustomCell else { return }
+
         handleCellTextColor(view: myCustomCell, cellState: cellState)
         //        handleCellSelection(view: myCustomCell, cellState: cellState)
     }
