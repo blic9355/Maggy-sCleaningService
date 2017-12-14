@@ -14,7 +14,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
@@ -22,9 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if Auth.auth().currentUser == nil {
             // Mark: - you did this wrong fix it
             let storyboard = UIStoryboard(name:"CalendarVC", bundle: Bundle.main)
-            let authVC = storyboard.instantiateViewController(withIdentifier: "FirstVC")
+            let AuthVC = storyboard.instantiateViewController(withIdentifier: "FirstVC")
             window?.makeKeyAndVisible()
-            window?.rootViewController?.present(FirstViewController(), animated: true, completion: nil)
+            window?.rootViewController?.present(AuthVC, animated: true, completion: nil)
         }
         return true
     }

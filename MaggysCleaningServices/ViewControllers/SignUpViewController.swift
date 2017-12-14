@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SignUpViewController: UIViewController, UITextFieldDelegate {
     
@@ -20,26 +21,25 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         emailTextField.delegate = self
         passwordTextField.delegate = self
-        phoneTextField.delegate = self
     }
     
     // Mark: - Actions
     @IBAction func signUpButtonTapped(_ sender: Any) {
         guard let emailText = emailTextField.text else { return }
         guard let passwordText = passwordTextField.text else { return }
-        guard let phoneNumber = phoneTextField.text else { return }
         
-        if emailTextField.text != nil && passwordTextField.text != nil && phoneTextField.text != nil {
-            AuthSevice.shared.registerUser(withEmail: emailText, andPassword: passwordText, andPhone: phoneNumber, userCreationComplete: { (success, registrationError) in
-                if success {
-                    AuthSevice.shared.loginUser(withEmail: emailText, andPassword: passwordText, loginComplete: { (success, nil) in
-                        print("Successfully registered user")
-                    })
-                } else {
-                    print(String(describing: registrationError?.localizedDescription))
-                }
-            })
+        Auth.auth().createUser(withEmail: emailText, password: passwordText) { (user, error) in
+            
+            if error != nil {
+                print(error)
+            } else {
+                //success
+                print("Registration successful")
+                
+                self.performSegue(withIdentifier: "goToCalendar", sender: self)
+            }
         }
+        
     }
     
     

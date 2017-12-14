@@ -7,18 +7,36 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController {
-    
+    // Mark: - Outlets
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
     
-    let alertErrorTitle = "Couldn't Signing in"
+    let alertErrorTitle = "Couldn't Sign in"
     let alertErrorMessage = "We couldn't sign you in. Check that all your login info is correct or sign up"
     
+    // Mark: - Actions
+    @IBAction func signInButtonTapped(_ sender: Any) {
+        guard let emailText = emailTextField.text else { return }
+        guard let passwordText = passwordTextfield.text else { return }
+        
+        Auth.auth().signIn(withEmail: emailText, password: passwordText) { (user, error) in
+            if error != nil {
+                print(error)
+                self.presentErrorAlertWith(title: self.alertErrorTitle, message: self.alertErrorMessage)
+                
+            } else {
+                print("login succesful")
+                
+                self.performSegue(withIdentifier: "goToCalendar", sender: self)
+            }
+        }
+    }
     func presentErrorAlertWith(title: String, message: String) {
         
-        let alertController = UIAlertController(title: alertErrorTitle, message: alertErrorMessage, preferredStyle: .alert)
+        let alertController = UIAlertController(title: self.alertErrorTitle, message: self.alertErrorMessage, preferredStyle: .alert)
         
         let subview = alertController.view.subviews.first! as UIView
         let alertContentView = subview.subviews.first! as UIView
@@ -36,30 +54,13 @@ class LoginViewController: UIViewController {
         self.present(alertController, animated: true, completion: nil)
         
     }
-    @IBAction func signInButtonTapped(_ sender: Any) {
-        guard let emailText = emailTextField.text else { return }
-        guard let passwordText = passwordTextfield.text else { return }
-        if emailTextField.text != nil && passwordTextfield.text != nil {
-            AuthSevice.shared.loginUser(withEmail: emailText, andPassword: passwordText, loginComplete: { (success, loginError) in
-                if success {
-                    self.dismiss(animated: true, completion: nil)
-                } else if success == false {
-                    self.presentErrorAlertWith(title: self.alertErrorTitle, message: self.alertErrorMessage)
-                    print(String(describing: loginError?.localizedDescription))
-                }
-                
-            })
-        }
-        
-       
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        emailTextField.delegate = self
-        passwordTextfield.delegate = self
+        emailTextField.delegate = self as? UITextFieldDelegate
+        passwordTextfield.delegate = self as? UITextFieldDelegate
         
     }
     
 }
 
-extension LoginViewController: UITextFieldDelegate { }
+

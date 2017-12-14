@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0106AE15ED7770C146C17133 /* Pods_MaggysCleaningServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5116D1CA9BD2DCEFB9EC118C /* Pods_MaggysCleaningServices.framework */; };
+		D37120861FE0ED7E007C5640 /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37120851FE0ED7E007C5640 /* EventsTableViewController.swift */; };
 		D3A3C3CA1FD9AD5A00CF20AE /* Appointments.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A3C3C91FD9AD5A00CF20AE /* Appointments.swift */; };
 		D3A3C3CD1FDB030700CF20AE /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A3C3CC1FDB030700CF20AE /* Extentions.swift */; };
 		D3C19CE21FD5F04600AF63E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C19CE11FD5F04600AF63E0 /* AppDelegate.swift */; };
@@ -31,6 +32,7 @@
 		3A3C4228FB011DD55757C0BA /* Pods-MaggysCleaningServices.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaggysCleaningServices.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MaggysCleaningServices/Pods-MaggysCleaningServices.debug.xcconfig"; sourceTree = "<group>"; };
 		5116D1CA9BD2DCEFB9EC118C /* Pods_MaggysCleaningServices.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MaggysCleaningServices.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		742F76347EFF4C16A2565A9B /* Pods-MaggysCleaningServices.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaggysCleaningServices.release.xcconfig"; path = "Pods/Target Support Files/Pods-MaggysCleaningServices/Pods-MaggysCleaningServices.release.xcconfig"; sourceTree = "<group>"; };
+		D37120851FE0ED7E007C5640 /* EventsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTableViewController.swift; sourceTree = "<group>"; };
 		D3A3C3C91FD9AD5A00CF20AE /* Appointments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appointments.swift; sourceTree = "<group>"; };
 		D3A3C3CC1FDB030700CF20AE /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
 		D3C19CDE1FD5F04600AF63E0 /* MaggysCleaningServices.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MaggysCleaningServices.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,8 +133,8 @@
 			children = (
 				D3C19CFB1FD5F50D00AF63E0 /* FirstVC.storyboard */,
 				D3DE98AD1FD6FFDF00C6BE86 /* LoginVC.storyboard */,
-				D3C19CEA1FD5F04600AF63E0 /* LaunchScreen.storyboard */,
 				D3DE98BA1FD7363200C6BE86 /* CalendarVC.storyboard */,
+				D3C19CEA1FD5F04600AF63E0 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -152,6 +154,7 @@
 				D3DE98B61FD7069F00C6BE86 /* LoginViewController.swift */,
 				D3DE98B81FD70B9000C6BE86 /* SignUpViewController.swift */,
 				D3DE98C11FD7454D00C6BE86 /* CalendarViewController.swift */,
+				D37120851FE0ED7E007C5640 /* EventsTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 			files = (
 				D3DE98B71FD7069F00C6BE86 /* LoginViewController.swift in Sources */,
 				D3DE98B91FD70B9000C6BE86 /* SignUpViewController.swift in Sources */,
+				D37120861FE0ED7E007C5640 /* EventsTableViewController.swift in Sources */,
 				D3C19CF71FD5F47000AF63E0 /* DataService.swift in Sources */,
 				D3A3C3CD1FDB030700CF20AE /* Extentions.swift in Sources */,
 				D3C19CE21FD5F04600AF63E0 /* AppDelegate.swift in Sources */,

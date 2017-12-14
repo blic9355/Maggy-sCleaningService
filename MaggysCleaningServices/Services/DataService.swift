@@ -30,4 +30,15 @@ class DataService {
         refUSERS.child(uid).updateChildValues(userData)
     }
     
+    func getUsernameFor(uid: String, completion: @escaping (_ username: String) -> ()) {
+        refUsers.observeSingleEvent(of: .value) { (userSnapshot) in
+            guard let userSnapshot = userSnapshot.children.allObjects as? [DataSnapshot] else { return }
+            for user in userSnapshot {
+                if user.key == uid {
+                    completion(user.childSnapshot(forPath: "email").value as! String)
+                }
+            }
+        }
+    }
+    
 }

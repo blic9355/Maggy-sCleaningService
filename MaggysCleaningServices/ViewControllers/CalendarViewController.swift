@@ -7,11 +7,28 @@
 //
 
 import UIKit
+import Firebase
+
 import JTAppleCalendar
 import EventKit
 
 class CalendarViewController: UIViewController {
-
+    var window: UIWindow?
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDayEvents" {
+            guard let destinationVC = segue.destination as? EventsTableViewController else { return }
+            guard let dateText = dateLabel.text else { return }
+            
+            destinationVC.startDate = dateText
+        }
+    }
+    
+    func handleTap(sender: UITapGestureRecognizer) {
+        if sender.state == .ended {
+            performSegue(withIdentifier: "toDayEvents", sender: self)
+        }
+    }
     var calendarFormatter = DateFormatter()
     let dateFormatter = DateFormatter()
     
@@ -30,7 +47,7 @@ class CalendarViewController: UIViewController {
     // Mark: - Actions
     @IBAction func makeAppointmentBtnTapped(_ sender: Any) {
         let eventStore: EKEventStore = EKEventStore()
-        let appointmentDate = dateLabel.text?.toDateFormattedWith(format: "HH:mm 'on' d/M/yy")
+        let appointmentDate = dateLabel.text?.toDateFormattedWith(format: "d/M/yy")
         
         
         eventStore.requestAccess(to: .event) { (granted, error) in
@@ -59,16 +76,32 @@ class CalendarViewController: UIViewController {
         
     }
     
+    @IBAction func signOutBtnTapped(_ sender: Any) {
+        
+        do {
+            try Auth.auth().signOut()
+        } catch {
+            print("error: there was a problem signing out")
+        }
+        
+        storyboard?.instantiateViewController(withIdentifier: "FirstVC")
+    }
+    //    guard (navigationController?.popToRootViewController(animated: true)) != nil
+    //    else {
+    //    print("No View Controller to pop off"),
+    //    return
+    //
+    //    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpCalendarView()
         
     }
-
+    
     func configureCell(view: JTAppleCell?, cellState: CellState) {
         guard let myCustomCell = view as? CustomCell else { return }
-
+        
         handleCellTextColor(view: myCustomCell, cellState: cellState)
         //        handleCellSelection(view: myCustomCell, cellState: cellState)
     }
