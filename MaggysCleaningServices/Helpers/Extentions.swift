@@ -13,7 +13,6 @@ let formatter = DateFormatter()
 
 extension String {
     func toDateFormattedWith(format: String) -> Date {
-        let formatter = DateFormatter()
         formatter.dateFormat = format
         guard let stringDate = formatter.date(from: self) else { return Date() }
         return stringDate
@@ -27,7 +26,7 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
     func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters {
         calendarFormatter.dateFormat = "YYY MM DD"
         calendarFormatter.timeZone = Calendar.current.timeZone
-        calendarFormatter.locale = Calendar.current.locale
+        calendarFormatter.locale = Locale(identifier: "en_US")
         
         let startDate = calendarFormatter.date(from: "2017 01 01")!
         let endDate = calendarFormatter.date(from: "3000 12 31")!
@@ -41,6 +40,14 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
 
     }
     
+    func setUpDatePicker() {
+        myDatePicker.datePickerMode = UIDatePickerMode.time
+        guard let dateText = dateLabel.text else {return}
+        let currentDate = Date()
+        let dateSelected = dateText.toDateFormattedWith(format: "d/M/yy")
+        myDatePicker.minimumDate = currentDate
+        myDatePicker.date = dateSelected
+    }
     func setUpCalendarView() {
         
         // calendar spacing
@@ -70,6 +77,7 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
         guard let day = cell.dateLabel.text else { return }
         guard let mounth = self.monthLabel.text else { return }
         guard let indexPath = calendar.indexPath(for: cell) else { return }
+        guard let dateText = dateLabel.text else { return }
         
         switch indexPath.item {
             
@@ -107,6 +115,7 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
         cell.selectedView.isHidden = false
         cell.selectedView.layer.cornerRadius = cell.selectedView.frame.size.width / 3
         configureCell(view: cell, cellState: cellState)
+        myDatePicker.date = dateText.toDateFormattedWith(format: "dd-MM-yyyy HH:mm")
     }
     
     // Mark: - Deseleced cell

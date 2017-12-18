@@ -147,7 +147,6 @@
                                                         <connections>
                                                             <outlet property="dateLabel" destination="5MW-gv-wXI" id="bK9-lF-klw"/>
                                                             <outlet property="selectedView" destination="XFM-Uk-ey8" id="GUM-Wn-LXu"/>
-                                                            <outletCollection property="gestureRecognizers" destination="Oer-n9-3yJ" appends="YES" id="qRw-To-fjk"/>
                                                         </connections>
                                                     </collectionViewCell>
                                                 </cells>
@@ -161,25 +160,48 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1tR-xj-iAF">
-                                <rect key="frame" x="184" y="677" width="46" height="30"/>
+                                <rect key="frame" x="184" y="686" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="makeAppointmentBtnTapped:" destination="fon-nm-M6I" eventType="touchUpInside" id="dmR-JZ-aeL"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RWv-1N-cDd">
-                                <rect key="frame" x="32" y="462" width="350" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RWv-1N-cDd">
+                                <rect key="frame" x="0.0" y="447" width="414" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Oas-qN-QIa"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ch-Hq-0AI">
+                                <rect key="frame" x="184" y="485" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="availabilityForDayBtn:" destination="fon-nm-M6I" eventType="touchUpInside" id="o7B-2p-uXk"/>
+                                </connections>
+                            </button>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="MN7-fF-ZeI">
+                                <rect key="frame" x="0.0" y="534" width="414" height="130"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="535307279.31960702">
+                                    <!--2017-12-18 16:27:59 +0000-->
+                                </date>
+                                <connections>
+                                    <action selector="myDateView:" destination="fon-nm-M6I" eventType="valueChanged" id="eDi-e8-Dgs"/>
+                                </connections>
+                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="RWv-1N-cDd" firstAttribute="top" secondItem="gR6-ys-YSY" secondAttribute="bottom" constant="5" id="9vx-Zr-JMk"/>
+                            <constraint firstItem="RWv-1N-cDd" firstAttribute="width" secondItem="7Gc-6U-Dqt" secondAttribute="width" id="Eq6-9R-xqE"/>
                             <constraint firstItem="dQq-2B-ngC" firstAttribute="top" secondItem="LWh-IP-7nM" secondAttribute="top" constant="10" id="KnE-Ho-cij"/>
                             <constraint firstItem="dQq-2B-ngC" firstAttribute="centerX" secondItem="LWh-IP-7nM" secondAttribute="centerX" id="LAe-Ej-PJy"/>
+                            <constraint firstItem="RWv-1N-cDd" firstAttribute="centerX" secondItem="LWh-IP-7nM" secondAttribute="centerX" id="O1f-i3-1hN"/>
                             <constraint firstItem="gR6-ys-YSY" firstAttribute="centerX" secondItem="LWh-IP-7nM" secondAttribute="centerX" id="UpE-iv-9NB"/>
                             <constraint firstItem="gR6-ys-YSY" firstAttribute="top" secondItem="LWh-IP-7nM" secondAttribute="top" constant="89" id="cef-He-UYM"/>
                             <constraint firstItem="dQq-2B-ngC" firstAttribute="height" secondItem="7Gc-6U-Dqt" secondAttribute="height" multiplier="1/2" id="hEc-KS-vrj"/>
@@ -199,15 +221,12 @@
                         <outlet property="calendarView" destination="gR6-ys-YSY" id="A2A-2l-8Rz"/>
                         <outlet property="dateLabel" destination="RWv-1N-cDd" id="l5c-eN-lKV"/>
                         <outlet property="monthLabel" destination="XOu-S2-7Dh" id="qTZ-GS-6b6"/>
+                        <outlet property="myDatePicker" destination="MN7-fF-ZeI" id="XWQ-8E-aT1"/>
                         <outlet property="yearLabel" destination="wH7-zF-1e7" id="Tx5-ha-grf"/>
+                        <segue destination="df3-9O-137" kind="show" identifier="toDayEvents" id="iY5-uF-Jqr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HDD-Jz-Le1" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer delaysTouchesBegan="YES" numberOfTapsRequired="2" id="Oer-n9-3yJ">
-                    <connections>
-                        <segue destination="df3-9O-137" kind="show" identifier="toDayEvents" id="omc-GQ-L74"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1760.8695652173915" y="174.45652173913044"/>
         </scene>
@@ -250,6 +269,13 @@
                             <outlet property="delegate" destination="df3-9O-137" id="bwt-bu-Tqo"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="cCo-dF-vuc">
+                        <barButtonItem key="rightBarButtonItem" title="Schedule Appointment" id="fBM-Pe-fgy">
+                            <connections>
+                                <action selector="scheduleAppointment:" destination="df3-9O-137" id="POk-zN-SyJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="agf-MH-0uZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

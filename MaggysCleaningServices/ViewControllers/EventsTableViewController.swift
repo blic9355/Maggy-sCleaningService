@@ -19,7 +19,7 @@ class EventsTableViewController: UITableViewController {
     var events: [EKEvent] = []
     
     func readEvents() {
-        let start = startDate.toDateFormattedWith(format: "d/M/yy")
+        let start = startDate.toDateFormattedWith(format: "en_US")
         let end = start.addingTimeInterval(3600 as TimeInterval)
         let eventStore = EKEventStore()
         let calendars = eventStore.calendars(for: .event)
@@ -33,7 +33,7 @@ class EventsTableViewController: UITableViewController {
                 let events = eventStore.events(matching: predicate)
                 
                 self.events = events
-            
+                
             }
         }
     }
@@ -66,101 +66,36 @@ class EventsTableViewController: UITableViewController {
     }
     
     
-    /*
-     // Override to support conditional editing of the table view.
-     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
-    
-    /*
-     // Override to support editing the table view.
-     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-     if editingStyle == .delete {
-     // Delete the row from the data source
-     tableView.deleteRows(at: [indexPath], with: .fade)
-     } else if editingStyle == .insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }
-     }
-     */
-    
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-     
-     }
-     */
-    
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    @IBAction func scheduleAppointment(_ sender: Any) {
+        let eventStore: EKEventStore = EKEventStore()
+        let appointmentDate: Date = startDate.toDateFormattedWith(format: "d/M/yy")
+        
+        
+        eventStore.requestAccess(to: .event) { (granted, error) in
+            if (granted) && (error == nil) {
+                print("granted\(granted)")
+                print("error \(String(describing:error))")
+                
+                let event: EKEvent = EKEvent(eventStore: eventStore)
+                event.title = "test"
+                DispatchQueue.main.async {
+                    event.startDate = appointmentDate
+                    event.endDate = event.startDate.addingTimeInterval(3600 as TimeInterval)
+                }
+                event.notes = "This is note"
+                event.calendar = eventStore.defaultCalendarForNewEvents
+                do {
+                    try eventStore.save(event, span: .thisEvent)
+                } catch let error as NSError {
+                    print("error \(error)")
+                }
+                print("save event")
+            } else {
+                print("error : \(String(describing:error))")
+            }
+        }
+    }
     
 }
-// Mark: - plan B
-//    func fetchEventsFromCalendar(calendartitle: String) -> Void {
-//        //        for calendar:EKCalendar in cal {
-//        //
-//        //        }
-//    }
-//
-//    func requestAccessToCalendar() {
-//        eventStore.requestAccess(to: EKEntityType.event) { (accessGranted, error) in
-//            if accessGranted == true {
-//                self.fetchEventsFromCalendar(calendartitle: "Calendar")
-//            }
-//        }
-//    }
-//
-//    func checkCalendarAuthorizationStatus() {
-//        let status = EKEventStore.authorizationStatus(for: EKEntityType.event)
-//
-//        switch (status) {
-//        case EKAuthorizationStatus.notDetermined:
-//            requestAccessToCalendar()
-//        case EKAuthorizationStatus.authorized:
-//
-//        }
-//    }
 
-
-//    func gettingEvents() {
-//
-//        let calendars = eventStore.calendars(for: .event)
-//
-//        for calendar in calendars {
-//
-//            if calendar.title == "Work" {
-//
-//                let today = NSDate(timeIntervalSinceNow: -30*24*3600)
-//                let oneMonthAfter = NSDate(timeIntervalSinceNow: +30*24*3600)
-//
-//                let predicate = eventStore.predicateForEvents(withStart: Date() , end: Date(), calendars: [calendar])
-//
-//                var events = eventStore.events(matching: predicate)
-//
-//                for event in events {
-//                    titles.append(event.title)
-//                    .append(event.startDate as! NSDate)
-//                    endDates.append(event.endDate as! NSDate)
-//
-//                }
-//            }
-//        }
-//    }
 

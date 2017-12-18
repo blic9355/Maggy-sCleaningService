@@ -8,46 +8,50 @@
 
 import UIKit
 import Firebase
-
 import JTAppleCalendar
 import EventKit
 
 class CalendarViewController: UIViewController {
+    // Mark: - Properties
     var window: UIWindow?
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toDayEvents" {
-            guard let destinationVC = segue.destination as? EventsTableViewController else { return }
-            guard let dateText = dateLabel.text else { return }
-            
-            destinationVC.startDate = dateText
-        }
-    }
-    
-    func handleTap(sender: UITapGestureRecognizer) {
-        if sender.state == .ended {
-            performSegue(withIdentifier: "toDayEvents", sender: self)
-        }
-    }
-    var calendarFormatter = DateFormatter()
+    var today = true
     let dateFormatter = DateFormatter()
-    
-    
-    
     let cell = CustomCell()
     let eventStore = EKEventStore()
+    var calendarFormatter: DateFormatter = {
+        let format = DateFormatter()
+        format.dateStyle = .medium
+        format.timeStyle = .none
+        format.locale = Locale(identifier: "en_US")
+        return format
+    }()
     
     // Mark: - Outlets
     @IBOutlet weak var calendarView: JTAppleCalendarView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var monthLabel: UILabel!
     @IBOutlet weak var yearLabel: UILabel!
-    
+    @IBOutlet weak var myDatePicker: UIDatePicker!
     
     // Mark: - Actions
+    @IBAction func myDateView(_ sender: UIDatePicker) {
+        
+    }
+    
     @IBAction func makeAppointmentBtnTapped(_ sender: Any) {
-        let eventStore: EKEventStore = EKEventStore()
-        let appointmentDate = dateLabel.text?.toDateFormattedWith(format: "d/M/yy")
+        let date = dateLabel.text?.toDateFormattedWith(format: "dd/mm/yy")
+        //        let eventStore: EKEventStore = dateLabel.text?.toDateFormattedWith(format: "d/M/yy")
+        //        let date = calendarFormatter.date(from: dateLabel.text!)
+        let appointmentDate = 
+        
+        //        eventStore.refreshSourcesIfNecessary()
+        // Reload calendar viewdateLabel.text?.toDateFormattedWith(format: "d/M/yy"
+        
+        
+        
+        // dateLabel.text?.toDateFormattedWith(format: "dd/mm/yy")
+        // EKEventStore = EKEventStore()
+        // dateLabel.text?.toDateFormattedWith(format: "d/M/yy")
         
         
         eventStore.requestAccess(to: .event) { (granted, error) in
@@ -55,16 +59,16 @@ class CalendarViewController: UIViewController {
                 print("granted\(granted)")
                 print("error \(String(describing:error))")
                 
-                let event: EKEvent = EKEvent(eventStore: eventStore)
+                let event: EKEvent = EKEvent(eventStore: self.eventStore)
                 event.title = "test"
                 DispatchQueue.main.async {
-                    event.startDate = appointmentDate
+                    event.startDate = self.myDatePicker.date
                     event.endDate = event.startDate.addingTimeInterval(3600 as TimeInterval)
                 }
                 event.notes = "This is note"
-                event.calendar = eventStore.defaultCalendarForNewEvents
+                event.calendar = self.eventStore.defaultCalendarForNewEvents
                 do {
-                    try eventStore.save(event, span: .thisEvent)
+                    try self.eventStore.save(event, span: .thisEvent)
                 } catch let error as NSError {
                     print("error \(error)")
                 }
@@ -86,12 +90,20 @@ class CalendarViewController: UIViewController {
         
         storyboard?.instantiateViewController(withIdentifier: "FirstVC")
     }
-    //    guard (navigationController?.popToRootViewController(animated: true)) != nil
-    //    else {
-    //    print("No View Controller to pop off"),
-    //    return
-    //
-    //    }
+    
+    @IBAction func availabilityForDayBtn(_ sender: Any) {
+        
+        func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if segue.identifier == "toDayEvents" {
+                guard let destinationVC = segue.destination as? EventsTableViewController else { return }
+                guard let dateText = dateLabel.text else { return }
+                
+                destinationVC.startDate = dateText
+            }
+        }
+        performSegue(withIdentifier: "toDayEvents", sender: self)
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -117,6 +129,7 @@ class CalendarViewController: UIViewController {
     var iii: Date?
     
 }
+
 
 
 
