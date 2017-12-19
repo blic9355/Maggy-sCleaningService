@@ -17,23 +17,29 @@ class LoginViewController: UIViewController {
     let alertErrorTitle = "Couldn't Sign in"
     let alertErrorMessage = "We couldn't sign you in. Check that all your login info is correct or sign up"
     
+    let notificationCenter = NotificationCenter.default
+    
     // Mark: - Actions
     @IBAction func signInButtonTapped(_ sender: Any) {
         guard let emailText = emailTextField.text else { return }
         guard let passwordText = passwordTextfield.text else { return }
+//
+//        if emailTextField != nil && passwordTextfield != nil {
+//            AuthSevice.shared.loginUser(withEmail: emailText, andPassword: passwordText, loginComplete: { (success, loginError) in
+//                if success {
+//                    self.performSegue(withIdentifier: "goToCalendar", sender: self)
+//                } else {
+//                    self.presentErrorAlertWith(title: self.alertErrorTitle, message: self.alertErrorMessage)
+//                }
+//            })
+//        }
+
+        UserController.shared.logIn(email: emailText, password: passwordText)
         
-        Auth.auth().signIn(withEmail: emailText, password: passwordText) { (user, error) in
-            if error != nil {
-                print(error)
-                self.presentErrorAlertWith(title: self.alertErrorTitle, message: self.alertErrorMessage)
-                
-            } else {
-                print("login succesful")
-                
-                self.performSegue(withIdentifier: "goToCalendar", sender: self)
-            }
-        }
     }
+    
+  
+    
     func presentErrorAlertWith(title: String, message: String) {
         
         let alertController = UIAlertController(title: self.alertErrorTitle, message: self.alertErrorMessage, preferredStyle: .alert)
@@ -59,6 +65,14 @@ class LoginViewController: UIViewController {
         emailTextField.delegate = self as? UITextFieldDelegate
         passwordTextfield.delegate = self as? UITextFieldDelegate
         
+        notificationCenter.addObserver(self, selector: #selector(segueToTab), name: UserController.shared.currentUserWasSetNotification, object: nil)
+        
+        
+        
+    }
+    
+    @objc func segueToTab() {
+        performSegue(withIdentifier: "goToCalendar", sender: self)
     }
     
 }

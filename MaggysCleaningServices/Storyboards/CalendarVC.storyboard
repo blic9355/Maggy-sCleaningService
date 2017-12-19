@@ -210,13 +210,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LWh-IP-7nM"/>
                     </view>
-                    <navigationItem key="navigationItem" id="71S-TF-rNh">
-                        <barButtonItem key="rightBarButtonItem" title="Sign out" id="y01-ee-h3H">
-                            <connections>
-                                <action selector="signOutBtnTapped:" destination="fon-nm-M6I" id="hqw-Ii-FXE"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="71S-TF-rNh"/>
                     <connections>
                         <outlet property="calendarView" destination="gR6-ys-YSY" id="A2A-2l-8Rz"/>
                         <outlet property="dateLabel" destination="RWv-1N-cDd" id="l5c-eN-lKV"/>
@@ -298,11 +292,6 @@
                                 <state key="normal" title="Sign up ">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <connections>
-                                    <segue destination="cqW-5A-ImW" kind="show" id="m8D-6u-tYw">
-                                        <nil key="action"/>
-                                    </segue>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maggy's Cleaning Services" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHr-SC-rYI">
                                 <rect key="frame" x="41.333333333333343" y="84" width="331.33333333333326" height="35"/>
@@ -322,11 +311,6 @@
                                 <state key="normal" title="Log in">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <connections>
-                                    <segue destination="FYB-Bd-Evq" kind="show" id="TOO-xN-CsF">
-                                        <nil key="action"/>
-                                    </segue>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -349,22 +333,6 @@
             </objects>
             <point key="canvasLocation" x="1006" y="1031"/>
         </scene>
-        <!--LoginVC-->
-        <scene sceneID="8ua-P2-hg3">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="signUpVC" storyboardName="LoginVC" id="cqW-5A-ImW" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="orz-DV-CHH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1520" y="920"/>
-        </scene>
-        <!--LoginVC-->
-        <scene sceneID="8na-i8-fcs">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="LoginViewController" storyboardName="LoginVC" id="FYB-Bd-Evq" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BgJ-8F-2nZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1520" y="965"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="3s1-9Y-5tG">
             <objects>
@@ -381,7 +349,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5dA-8D-VdU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="19" y="937"/>
+            <point key="canvasLocation" x="207" y="1030"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yKm-RM-8aO">

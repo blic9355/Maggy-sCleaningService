@@ -12,6 +12,7 @@ import Firebase
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    static let sharedAD = AppDelegate()
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -20,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         if Auth.auth().currentUser == nil {
             // Mark: - you did this wrong fix it
-            let storyboard = UIStoryboard(name:"CalendarVC", bundle: Bundle.main)
+            let storyboard = UIStoryboard(name:"LoginVC", bundle: Bundle.main)
             let AuthVC = storyboard.instantiateViewController(withIdentifier: "FirstVC")
             window?.makeKeyAndVisible()
             window?.rootViewController?.present(AuthVC, animated: true, completion: nil)

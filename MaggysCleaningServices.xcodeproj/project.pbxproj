@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		0106AE15ED7770C146C17133 /* Pods_MaggysCleaningServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5116D1CA9BD2DCEFB9EC118C /* Pods_MaggysCleaningServices.framework */; };
+		D33E7A2C1FE83D4700A8B5D6 /* Tab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D33E7A2B1FE83D4700A8B5D6 /* Tab.storyboard */; };
+		D33E7A2E1FE83F2800A8B5D6 /* UsersVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D33E7A2D1FE83F2800A8B5D6 /* UsersVC.storyboard */; };
+		D33E7A301FE858EB00A8B5D6 /* UserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33E7A2F1FE858EB00A8B5D6 /* UserVC.swift */; };
+		D33E7A321FE9673A00A8B5D6 /* UserEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33E7A311FE9673A00A8B5D6 /* UserEditViewController.swift */; };
+		D341C4F11FE9AE6D00AAB592 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = D341C4F01FE9AE6D00AAB592 /* Users.swift */; };
+		D341C4F31FE9B00400AAB592 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D341C4F21FE9B00400AAB592 /* UserController.swift */; };
 		D37120861FE0ED7E007C5640 /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37120851FE0ED7E007C5640 /* EventsTableViewController.swift */; };
 		D3A3C3CA1FD9AD5A00CF20AE /* Appointments.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A3C3C91FD9AD5A00CF20AE /* Appointments.swift */; };
 		D3A3C3CD1FDB030700CF20AE /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A3C3CC1FDB030700CF20AE /* Extentions.swift */; };
@@ -16,7 +22,6 @@
 		D3C19CEC1FD5F04600AF63E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3C19CEA1FD5F04600AF63E0 /* LaunchScreen.storyboard */; };
 		D3C19CF41FD5F35D00AF63E0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3C19CF31FD5F35D00AF63E0 /* GoogleService-Info.plist */; };
 		D3C19CF71FD5F47000AF63E0 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C19CF61FD5F47000AF63E0 /* DataService.swift */; };
-		D3C19CFC1FD5F50D00AF63E0 /* FirstVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3C19CFB1FD5F50D00AF63E0 /* FirstVC.storyboard */; };
 		D3C19D011FD5F80E00AF63E0 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C19D001FD5F80E00AF63E0 /* AuthService.swift */; };
 		D3DE98AE1FD6FFDF00C6BE86 /* LoginVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3DE98AD1FD6FFDF00C6BE86 /* LoginVC.storyboard */; };
 		D3DE98B01FD7031100C6BE86 /* AdminAuthSevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DE98AF1FD7031100C6BE86 /* AdminAuthSevice.swift */; };
@@ -32,6 +37,12 @@
 		3A3C4228FB011DD55757C0BA /* Pods-MaggysCleaningServices.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaggysCleaningServices.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MaggysCleaningServices/Pods-MaggysCleaningServices.debug.xcconfig"; sourceTree = "<group>"; };
 		5116D1CA9BD2DCEFB9EC118C /* Pods_MaggysCleaningServices.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MaggysCleaningServices.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		742F76347EFF4C16A2565A9B /* Pods-MaggysCleaningServices.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaggysCleaningServices.release.xcconfig"; path = "Pods/Target Support Files/Pods-MaggysCleaningServices/Pods-MaggysCleaningServices.release.xcconfig"; sourceTree = "<group>"; };
+		D33E7A2B1FE83D4700A8B5D6 /* Tab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tab.storyboard; sourceTree = "<group>"; };
+		D33E7A2D1FE83F2800A8B5D6 /* UsersVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UsersVC.storyboard; sourceTree = "<group>"; };
+		D33E7A2F1FE858EB00A8B5D6 /* UserVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserVC.swift; sourceTree = "<group>"; };
+		D33E7A311FE9673A00A8B5D6 /* UserEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEditViewController.swift; sourceTree = "<group>"; };
+		D341C4F01FE9AE6D00AAB592 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		D341C4F21FE9B00400AAB592 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		D37120851FE0ED7E007C5640 /* EventsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTableViewController.swift; sourceTree = "<group>"; };
 		D3A3C3C91FD9AD5A00CF20AE /* Appointments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appointments.swift; sourceTree = "<group>"; };
 		D3A3C3CC1FDB030700CF20AE /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
@@ -42,7 +53,6 @@
 		D3C19CED1FD5F04600AF63E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3C19CF31FD5F35D00AF63E0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D3C19CF61FD5F47000AF63E0 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
-		D3C19CFB1FD5F50D00AF63E0 /* FirstVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FirstVC.storyboard; sourceTree = "<group>"; };
 		D3C19D001FD5F80E00AF63E0 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		D3DE98AD1FD6FFDF00C6BE86 /* LoginVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginVC.storyboard; sourceTree = "<group>"; };
 		D3DE98AF1FD7031100C6BE86 /* AdminAuthSevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminAuthSevice.swift; sourceTree = "<group>"; };
@@ -124,6 +134,7 @@
 				D3C19CF61FD5F47000AF63E0 /* DataService.swift */,
 				D3C19D001FD5F80E00AF63E0 /* AuthService.swift */,
 				D3DE98AF1FD7031100C6BE86 /* AdminAuthSevice.swift */,
+				D341C4F21FE9B00400AAB592 /* UserController.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -131,10 +142,11 @@
 		D3C19CF81FD5F4E800AF63E0 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				D3C19CFB1FD5F50D00AF63E0 /* FirstVC.storyboard */,
 				D3DE98AD1FD6FFDF00C6BE86 /* LoginVC.storyboard */,
 				D3DE98BA1FD7363200C6BE86 /* CalendarVC.storyboard */,
 				D3C19CEA1FD5F04600AF63E0 /* LaunchScreen.storyboard */,
+				D33E7A2B1FE83D4700A8B5D6 /* Tab.storyboard */,
+				D33E7A2D1FE83F2800A8B5D6 /* UsersVC.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -143,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				D3A3C3C91FD9AD5A00CF20AE /* Appointments.swift */,
+				D341C4F01FE9AE6D00AAB592 /* Users.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -155,6 +168,8 @@
 				D3DE98B81FD70B9000C6BE86 /* SignUpViewController.swift */,
 				D3DE98C11FD7454D00C6BE86 /* CalendarViewController.swift */,
 				D37120851FE0ED7E007C5640 /* EventsTableViewController.swift */,
+				D33E7A2F1FE858EB00A8B5D6 /* UserVC.swift */,
+				D33E7A311FE9673A00A8B5D6 /* UserEditViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -238,8 +253,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3DE98BB1FD7363200C6BE86 /* CalendarVC.storyboard in Resources */,
-				D3C19CFC1FD5F50D00AF63E0 /* FirstVC.storyboard in Resources */,
+				D33E7A2C1FE83D4700A8B5D6 /* Tab.storyboard in Resources */,
 				D3C19CEC1FD5F04600AF63E0 /* LaunchScreen.storyboard in Resources */,
+				D33E7A2E1FE83F2800A8B5D6 /* UsersVC.storyboard in Resources */,
 				D3DE98AE1FD6FFDF00C6BE86 /* LoginVC.storyboard in Resources */,
 				D3C19CF41FD5F35D00AF63E0 /* GoogleService-Info.plist in Resources */,
 				D3C19CE91FD5F04600AF63E0 /* Assets.xcassets in Resources */,
@@ -316,15 +332,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3DE98B71FD7069F00C6BE86 /* LoginViewController.swift in Sources */,
+				D33E7A321FE9673A00A8B5D6 /* UserEditViewController.swift in Sources */,
+				D341C4F31FE9B00400AAB592 /* UserController.swift in Sources */,
 				D3DE98B91FD70B9000C6BE86 /* SignUpViewController.swift in Sources */,
 				D37120861FE0ED7E007C5640 /* EventsTableViewController.swift in Sources */,
 				D3C19CF71FD5F47000AF63E0 /* DataService.swift in Sources */,
 				D3A3C3CD1FDB030700CF20AE /* Extentions.swift in Sources */,
 				D3C19CE21FD5F04600AF63E0 /* AppDelegate.swift in Sources */,
+				D341C4F11FE9AE6D00AAB592 /* Users.swift in Sources */,
 				D3DE98B01FD7031100C6BE86 /* AdminAuthSevice.swift in Sources */,
 				D3DE98B51FD7057F00C6BE86 /* FirstViewController.swift in Sources */,
 				D3DE98C21FD7454D00C6BE86 /* CalendarViewController.swift in Sources */,
 				D3A3C3CA1FD9AD5A00CF20AE /* Appointments.swift in Sources */,
+				D33E7A301FE858EB00A8B5D6 /* UserVC.swift in Sources */,
 				D3C19D011FD5F80E00AF63E0 /* AuthService.swift in Sources */,
 				D3DE98C01FD7440F00C6BE86 /* CustomCell.swift in Sources */,
 			);
@@ -457,6 +477,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 27CK957U72;
 				INFOPLIST_FILE = MaggysCleaningServices/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

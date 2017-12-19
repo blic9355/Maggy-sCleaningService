@@ -6,8 +6,8 @@
 //  Copyright © 2017 Brian Licea. All rights reserved.
 //
 
-import Foundation
-import Firebase
+//import Foundation
+//import Firebase
 
 //class AdminAuthSevice {
 //    static let instance = AuthSevice()

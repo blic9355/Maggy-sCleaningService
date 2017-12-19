@@ -8,6 +8,7 @@
 
 import Foundation
 import JTAppleCalendar
+
 let formatter = DateFormatter()
 // Mark: - String Extention
 
